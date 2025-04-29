@@ -216,15 +216,27 @@ public class lab1 {
      */
     public Double calPageRank(String word) {
         int N = graph.size();
-        Map<String, Double> pr = new HashMap<>(), newPr = new HashMap<>();
+        Map<String, Double> pr = new HashMap<>(),
+                newPr = new HashMap<>();
         graph.keySet().forEach(n -> pr.put(n, 1.0 / N));
-        for (int i = 0; i < 100; i++) {
+
+        for (int iter = 0; iter < 100; iter++) {
+            // 1. 计算悬挂节点总质量
+            double danglingSum = graph.keySet().stream()
+                    .filter(u -> graph.get(u).isEmpty())
+                    .mapToDouble(pr::get)
+                    .sum();
+
+            // 2. 迭代更新每个节点
             for (String node : graph.keySet()) {
-                double sum = graph.keySet().stream()
+                double sumIn = graph.keySet().stream()
                         .filter(u -> graph.get(u).containsKey(node))
                         .mapToDouble(u -> pr.get(u) / graph.get(u).size())
                         .sum();
-                newPr.put(node, (1 - DAMPING) / N + DAMPING * sum);
+                double danglingContribution = danglingSum / N;
+                newPr.put(node,
+                        (1 - DAMPING) / N
+                                + DAMPING * (sumIn + danglingContribution));
             }
             pr.putAll(newPr);
         }
