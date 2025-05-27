@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FindBugs-IDEA">
+    <plugins>
+      <plugin id="com.h3xstream.findsecbugs" enabled="true" bundled="true">
+        <detectors>
+          <detector name="CommandInjectionDetector" enabled="false" />
+          <detector name="PathTraversalDetector" enabled="false" />
+        </detectors>
+      </plugin>
+    </plugins>
+    <detectors>
+      <detector name="DefaultEncodingDetector" enabled="false" />
+    </detectors>
+  </component>
+</project>
