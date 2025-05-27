@@ -1,12 +1,13 @@
+import static org.junit.Assert.assertEquals;
+
+import java.io.IOException;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
-import java.io.IOException;
 
 /**
  * 针对 Lab1 类的 queryBridgeWords 方法的黑盒测试类.
  */
-public class Test_bridgewords {
+public class TestBridgeWords {
   private Lab1 lab1;
   
   /**
