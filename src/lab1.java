@@ -17,7 +17,7 @@ import java.util.*;
  * 6. 随机游走
  * 7. 将有向图保存为图像文件（依赖Graphviz）
  */
-public class lab1 {
+public class Lab1 {
     // 图的内部表示：邻接表，key->Map<neighbor, weight>
     private Map<String, Map<String, Integer>> graph = new HashMap<>();
     private final double DAMPING = 0.85;
