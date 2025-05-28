@@ -31,6 +31,7 @@ public class TestBridgeWords {
         "The bridge word from \"scientist\" to \"analyzed\" is: carefully.",
         result
     );
+    System.out.println("测试1通过!");
   }
   
   /**
@@ -43,6 +44,7 @@ public class TestBridgeWords {
         "The bridge word from \"report\" to \"shared\" is: and.",
         result
     );
+    System.out.println("测试2通过!");
   }
   
   /**
@@ -55,6 +57,7 @@ public class TestBridgeWords {
         "No bridge word from \"team\" to \"data\"!",
         result
     );
+    System.out.println("测试3通过!");
   }
   
   /**
@@ -67,6 +70,7 @@ public class TestBridgeWords {
         "No apple or data in the graph!",
         result
     );
+    System.out.println("测试4通过!");
   }
   
   /**
@@ -79,6 +83,7 @@ public class TestBridgeWords {
         "No data or apple in the graph!",
         result
     );
+    System.out.println("测试5通过!");
   }
   
   /**
@@ -91,5 +96,6 @@ public class TestBridgeWords {
         "No 123 or data in the graph!",
         result
     );
+    System.out.println("测试6通过!");
   }
 }
